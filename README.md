@@ -1,27 +1,18 @@
-# Minimal Mistakes remote theme starter
+# Visual Skill Editor
+[**Github Project**](https://github.com/river-li-tech/VisualSkillEditor)
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+**一种基于指令集的技能编辑器：将技能抽象为基于时间轴的主线（也支持控制逻辑和跳转），通过在时间轴上挂接技能指令的方式来表达技能逻辑。**
 
-Contains basic configuration to get you a site with:
+本仓库包含以下内容：
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+1. 全部的编辑器[代码](Sources)。
+2. 编辑器相关[帮助文档wiki](https://github.com/River-Li-1024/VisualSkillEditor/wiki)。
+3. 演示全部功能的[实例](Bin/Workspace)。
+4. 直接可用的[Win32版本](Versions)。
+5. 全部的[指令集](Bin/Config/SkillSpec.xml)及其描述说明。
+6. 用于收集维护和反馈的[链接](https://github.com/River-Li-1024/VisualSkillEditor/issues/1).
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
 
----
-
-## Troubleshooting
-
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
-
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+# River's Personal Site
+[**Personal Site**](https://river-li-tech.github.io/river-li-tech/)
+**整理的一些文章和笔记**
