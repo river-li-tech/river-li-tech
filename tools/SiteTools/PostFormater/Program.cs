@@ -58,6 +58,11 @@ namespace PostFormater
             //////////////////////////////////////////
             ///收集原资源目录内容
             string dir = Path.Combine(m_PostDir, m_PostName + "_files");
+            if (!Directory.Exists(dir))
+            {
+                return;
+            }
+
             DirectoryInfo folder = new DirectoryInfo(dir);
             foreach (FileInfo fi in folder.GetFiles())//遍历文件夹下所有文件
             {
@@ -130,25 +135,31 @@ namespace PostFormater
         {
             //拷贝post
             string frmHtmlFile = Path.Combine(m_PostDir, m_PostShortName + ".md");
-            string toHtmlFile = Path.Combine(m_SiteDir + "/_posts", m_PostDate + "-" + m_PostShortName + ".md");
-            File.Copy(frmHtmlFile, toHtmlFile, true);
-            File.Delete(frmHtmlFile);
+            if (File.Exists(frmHtmlFile))
+            {
+                string toHtmlFile = Path.Combine(m_SiteDir + "/_posts", m_PostDate + "-" + m_PostShortName + ".md");
+                File.Copy(frmHtmlFile, toHtmlFile, true);
+                File.Delete(frmHtmlFile);
+            }
 
             //拷贝assets
             string frmAssetDir = Path.Combine(m_PostDir, m_PostShortName);
-            string toAssetDir = Path.Combine(m_SiteDir + "/assets/images", m_PostShortName);
-            if (Directory.Exists(toAssetDir))
+            if (Directory.Exists(frmAssetDir))
             {
-                Directory.Delete(toAssetDir, true);
-            }
-            Directory.CreateDirectory(toAssetDir);
+                string toAssetDir = Path.Combine(m_SiteDir + "/assets/images", m_PostShortName);
+                if (Directory.Exists(toAssetDir))
+                {
+                    Directory.Delete(toAssetDir, true);
+                }
+                Directory.CreateDirectory(toAssetDir);
 
-            DirectoryInfo folder = new DirectoryInfo(frmAssetDir);
-            foreach (FileInfo fi in folder.GetFiles())//遍历文件夹下所有文件
-            {
-                File.Copy(frmAssetDir + "/" + fi.Name, toAssetDir + "/" + fi.Name);
+                DirectoryInfo folder = new DirectoryInfo(frmAssetDir);
+                foreach (FileInfo fi in folder.GetFiles())//遍历文件夹下所有文件
+                {
+                    File.Copy(frmAssetDir + "/" + fi.Name, toAssetDir + "/" + fi.Name);
+                }
+                Directory.Delete(frmAssetDir, true);
             }
-            Directory.Delete(frmAssetDir, true);
         }
     }
 }
