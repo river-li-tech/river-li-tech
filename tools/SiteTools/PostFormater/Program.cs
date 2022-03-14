@@ -120,7 +120,7 @@ namespace PostFormater
             foreach (var pair in m_Files)
             {
                 string oldPath = m_PostName + "_files" + "/" + pair.Item1;
-                string newPath = "/assets/images/" + m_PostShortName + "/" + pair.Item2;
+                string newPath = "https://river-li-tech.github.io/river-li-tech/assets/images/" + m_PostShortName + "/" + pair.Item2;
                 newContent = content.Replace(oldPath, newPath);
                 content = newContent;
             }
